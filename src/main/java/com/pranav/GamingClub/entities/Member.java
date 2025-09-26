@@ -2,6 +2,8 @@ package com.pranav.GamingClub.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +20,7 @@ public class Member {
    private String name;
    private float balance=0;
    private String phone;
-   
+  @JsonIgnore
    @OneToMany(mappedBy = "member")
    List<Recharge> recharges;  
    

@@ -2,6 +2,7 @@ package com.pranav.GamingClub.entities;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,9 +19,11 @@ public class Transaction {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="member_id")
 	private Member member;
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="game_id")
 	private Game game;
 	private float amount;

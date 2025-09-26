@@ -3,6 +3,7 @@ package com.pranav.GamingClub.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ public class Recharge {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="member_id")
 	private Member member;
 	private float amount;
